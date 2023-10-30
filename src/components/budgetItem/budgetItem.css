@@ -1,0 +1,9 @@
+.budgets-info-header{
+    background-color: aquamarine;
+    transition: .5s;
+}
+.budgets-info-header:hover{
+    background-color: rgb(212, 241, 235);
+    cursor: pointer;
+    
+}
