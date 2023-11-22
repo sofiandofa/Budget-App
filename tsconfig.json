@@ -6,6 +6,15 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
+      // ...
+      "baseUrl": ".",
+      "paths": {
+        "@/*": [
+          "./src/*"
+        ]
+      },
+      // ...
+      
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -20,6 +29,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
+  
   "include": ["src", "types.d.ts","**/*.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

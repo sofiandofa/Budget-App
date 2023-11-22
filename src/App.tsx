@@ -8,9 +8,8 @@ function App() {
 
     return (
     <main>
-        <section className="bg-dark-subtle budgets-container">
+            
             <AddBudget/>
-        </section>
         <section className="budgetsItems-holder container mx-auto pt-4 ">
             <Budgets/>
         </section>

@@ -9,9 +9,12 @@ function Budgets() {
 
     const content=budgets.budgetsList.map((budget:BudgetInfo)=>{
         return (
-            <div className="" key={budget.id}>
+            
+            budget.id!==undefined&&
+            <div className=" border  border-black" key={budget.id}>
                 <BudgetItem budget={budget} key={budget.id}/>
             </div>
+        
         )
     })
     return content

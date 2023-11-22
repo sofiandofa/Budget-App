@@ -1,14 +1,17 @@
-import { useDispatch } from "react-redux"
-import {useRef} from 'react'
+import { useDispatch, useSelector } from "react-redux"
+import {useEffect, useRef} from 'react'
 import {addExpenses} from "../../features/budget-slice"
+import { budgetSelector } from "../../store/budget-selector";
 
 function AddExpense({id}:{id:string}) {
-    
+    const budget= useSelector(budgetSelector)
     const dispatch=useDispatch();
     const nameExpense =useRef<HTMLInputElement>(null)
     const amountExpense =useRef<HTMLInputElement>(null)
 
-    
+    useEffect(()=>{
+        console.log(budget.budgetsList)
+    },[budget.budgetsList])
     const handleSubmit=(e: React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
         e.preventDefault();
         if(nameExpense.current!==null && amountExpense.current!==null){
