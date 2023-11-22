@@ -6,20 +6,21 @@ import TotalAmount from "../../components/totalAmount";
 import {submitFirstForm} from '@/features/submit-slice'
 import "./addTotalAmount.css"
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
+import { isTheFirstSubmited } from "@/store/submit-selector";
 
 function AddTotalAmount() {
     const [index, setIndex] = useState(0);
-    const isTheFirstSubmited= useSelector((state)=>state.isSubmited.isTheFirstSubmited)
+    const isTheFirstSubmite= useSelector(isTheFirstSubmited)
     const dispatch=useDispatch()
-    console.log(isTheFirstSubmited,"helo")
+    console.log(isTheFirstSubmite,"helo")
 
     useEffect(()=> {
-        if(isTheFirstSubmited){
+        if(isTheFirstSubmite){
             setIndex(1)
         }
-    }, [isTheFirstSubmited])
+    }, [isTheFirstSubmite])
     useEffect(()=>{
-        if(index===0 && isTheFirstSubmited){
+        if(index===0 && isTheFirstSubmite){
             dispatch(submitFirstForm())
         }
     },[index])

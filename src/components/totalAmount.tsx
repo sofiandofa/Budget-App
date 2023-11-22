@@ -1,11 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {submitFirstForm} from "@/features/submit-slice"
+import { isTheFirstSubmited } from "@/store/submit-selector";
+
 function TotalAmount({position}:{position:string}) {
 
-    const isTheFirstSubmited= useSelector((state)=>state.isSubmited.isTheFirstSubmited);
+    const isTheFirstSubmite= useSelector(isTheFirstSubmited);
     const dispatch=useDispatch()
-    console.log(isTheFirstSubmited)
+    // console.log(isTheFirstSubmite)
 
     const submitHundler=(e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault()
@@ -20,7 +22,7 @@ function TotalAmount({position}:{position:string}) {
             <h1 className='title '>add your total amount</h1>
             <form onSubmit={submitHundler} className='d-flex flex-column align-items-center  '>
                     <input type="number"  name='amount' className="mb-4"/>
-                    <button className='btn btn-dark  d-inline' disabled ={isTheFirstSubmited?true:false} >submit</button>
+                    <button className='btn btn-dark  d-inline' disabled ={isTheFirstSubmite?true:false} >submit</button>
             </form>
         </article>
     )

@@ -3,6 +3,7 @@
     margin: 5rem auto;
     max-width: var(--max-width);
     background-color: #00000048;
+    height: 80vh;
 }
 
 @media screen and (min-width: 992px) {
@@ -23,6 +24,7 @@ Slider
     width: 80vw;
     height: 450px;
     max-width: 800px;
+    top: 50px;
     text-align: center;
     position: relative;
     display: flex;
