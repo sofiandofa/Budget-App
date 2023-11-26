@@ -41,7 +41,14 @@
     */-webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
+.budget-content> h3>span{
+    background: linear-gradient(3deg, rgb(7 235 164) 9%, rgb(42 175 205) 26%,rgb(129, 180, 248) 54%,rgb(0 255 11) 73%,rgb(14 255 206) 3%);
+    /* background: linear-gradient(3deg, rgb(29 67 255) 9%, rgb(30 38 217) 26%,rgb(129, 180, 248) 54%,rgb(38, 0, 255) 73%,rgb(51, 122, 194) 98%);
+     */-webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 30px;
+    padding: 6px;
+}
 
 .budget-content label{
     max-width:480px;

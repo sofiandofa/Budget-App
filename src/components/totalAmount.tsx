@@ -2,20 +2,19 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {submitFirstForm} from "@/features/submit-slice"
 import { isTheFirstSubmited } from "@/store/submit-selector";
+import { addTotalAmount } from "@/features/budget-slice";
 
 function TotalAmount({position}:{position:string}) {
 
     const isTheFirstSubmite= useSelector(isTheFirstSubmited);
     const dispatch=useDispatch()
-    // console.log(isTheFirstSubmite)
 
     const submitHundler=(e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault()
         const formData = new FormData(e.currentTarget)
         const amount = formData.get('amount')
-        console.log(amount)
         dispatch(submitFirstForm())
-        
+        dispatch(addTotalAmount(amount))
     }
     return (
         <article className={`${position} shadow-lg`} >

@@ -7,9 +7,11 @@ import { addBudget } from "../../features/budget-slice"
 import { budgetSelector } from "../../store/budget-selector"
 import Navbar from "@/components/navbar/navbar"
 
+
 function AddBudget() {
     const dispatch=useDispatch()
     const budget=useSelector(budgetSelector)
+    const {totalAmount}=useSelector(budgetSelector)
 
     const [name, setName] = useState("")
     const [amount, setAmount] = useState("")
@@ -33,6 +35,7 @@ function AddBudget() {
                     </div>
                     <div className="budget-content d-flex align-items-center flex-column ">
                         <h1>organise your Budget</h1>
+                        <h3 className=" fst-italic "> Your Total Amount Is <span className="total-amount">{`${totalAmount}`}</span>$</h3>
                         <form className="d-flex flex-column  align-items-center   justify-content-between border border-black p-4"
                         onSubmit={submitHundler}
                         >

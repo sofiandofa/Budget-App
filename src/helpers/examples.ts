@@ -1,0 +1,1 @@
+export  const exampales:string[] =["house","car","school","food"];

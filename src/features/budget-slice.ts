@@ -5,8 +5,10 @@ const initialState={
         name:undefined,
         amount:undefined,
         date:undefined,
-        expensesBudget:[{name:"",amount:"",id:""}]
+        expensesBudget:[{name:"",amount:"",id:""}],
     }],
+    totalAmount:undefined,
+
 }
 const budgetSlice=createSlice({
     name:"budget",
@@ -14,7 +16,7 @@ const budgetSlice=createSlice({
     reducers:{
         addBudget(state,action:{payload: {name:string,amount:string,id:string,date:string};type: string;}){
             const budget:BudgetInfo=action.payload;
-            state.budgetsList.push(budget);
+            state.budgetsList?.push(budget);
             return 
         },
         deleteBudget(){
@@ -30,9 +32,13 @@ const budgetSlice=createSlice({
             const budgetExpenses=budget?.expensesBudget
             budgetExpenses?.push({name:name,amount:amount,id:id})
             return
+        },
+        addTotalAmount(state,action){
+            const total=action.payload;
+            state.totalAmount=total;
         }
 
     }
 })
-export const {addBudget,deleteBudget,renameBudget,addExpenses} =budgetSlice.actions;
+export const {addBudget,deleteBudget,renameBudget,addExpenses,addTotalAmount} =budgetSlice.actions;
 export default budgetSlice.reducer;

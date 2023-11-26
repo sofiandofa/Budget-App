@@ -8,8 +8,7 @@ function App() {
 
     return (
     <main>
-            
-            <AddBudget/>
+        <AddBudget/>
         <section className="budgetsItems-holder container mx-auto pt-4 ">
             <Budgets/>
         </section>

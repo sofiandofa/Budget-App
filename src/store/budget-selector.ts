@@ -1,6 +1,7 @@
 type Props={
         budget:{
-            budgetsList:[]
+            budgetsList:[],
+            totalAmount:number,
         }
     
 }
