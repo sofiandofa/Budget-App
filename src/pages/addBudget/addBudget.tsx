@@ -5,29 +5,33 @@ import './addBudget.css'
 import { useDispatch, useSelector } from "react-redux"
 import { addBudget } from "../../features/budget-slice"
 import { budgetSelector } from "../../store/budget-selector"
-import Navbar from "@/components/navbar/navbar"
 
 
 function AddBudget() {
     const dispatch=useDispatch()
     const budget=useSelector(budgetSelector)
     const {totalAmount}=useSelector(budgetSelector)
-
+    console.log(totalAmount)
     const [name, setName] = useState("")
     const [amount, setAmount] = useState("")
-
+    
     const submitHundler=(e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault();
         if(name!=="" && amount!==""){
-            dispatch(addBudget({name,amount,id:budget.budgetsList.length.toString(),date:Date.now().toString()}));
+            dispatch(addBudget(
+                {
+                    name,amount,id:budget.budgetsList.length.toString(),
+                    date:(new Date()).toISOString(),
+                }
+                ));
         }
         setName("");
         setAmount('')
+        console.log(budget.budgetsList)
     }
 
     return (
         <div>
-            <Navbar/>
             <section className="budgets-container">
                 <div className="budget mx-auto container justify-center items-end">
                     <div className="budget-img-holder">

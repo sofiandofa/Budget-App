@@ -4,15 +4,17 @@ import BudgetItem from "../../components/budgetItem/budgetItem";
 import './budgets.css'
 
 function Budgets() {
-    const budgets=useSelector(budgetSelector);
+    const {budgetsList}=useSelector(budgetSelector);
 
-
-    const content=budgets.budgetsList.map((budget:BudgetInfo)=>{
+    const content=budgetsList.map((budget:BudgetInfo)=>{
         return (
             
             budget.id!==undefined&&
-            <div className=" border  border-black" key={budget.id}>
-                <BudgetItem budget={budget} key={budget.id}/>
+            <div className="budgetsItems-holder container mx-auto pt-4 ">
+                <div className=" border  border-black" key={budget.id}>
+                    <BudgetItem budget={budget} key={budget.id}/>
+                    
+                </div>
             </div>
         
         )

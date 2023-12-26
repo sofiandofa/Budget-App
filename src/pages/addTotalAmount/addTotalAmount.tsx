@@ -7,12 +7,13 @@ import {submitFirstForm} from '@/features/submit-slice'
 import "./addTotalAmount.css"
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import { isTheFirstSubmited } from "@/store/submit-selector";
+import Navbar from "@/components/navbar/navbar";
 
 function AddTotalAmount() {
     const [index, setIndex] = useState(0);
     const isTheFirstSubmite= useSelector(isTheFirstSubmited)
+    
     const dispatch=useDispatch()
-    console.log(isTheFirstSubmite,"helo")
 
     useEffect(()=> {
         if(isTheFirstSubmite){
@@ -41,6 +42,7 @@ function AddTotalAmount() {
     }
     return (
     <div>
+        <Navbar/>
         <section className="section">
             <div className="section-center">
                 {content()}

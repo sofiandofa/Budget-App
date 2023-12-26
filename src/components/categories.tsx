@@ -10,8 +10,8 @@ function Categories({position}:{position:string}) {
                     <input type="text" name="" id="" className='form-control-sm border-1'/>
             </form>
             <div className='d-flex flex-column flex-sm-row flex-wrap justify-content-center gap-md-1 mt-0 mt-md-5'>
-                {exampales.map(ele=>{
-                    return <CategorieExample example={ele}/>
+                {exampales.map((ele,index)=>{
+                    return <CategorieExample example={ele} key={index}/>
                 })}
                 
             </div>

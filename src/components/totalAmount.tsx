@@ -5,7 +5,6 @@ import { isTheFirstSubmited } from "@/store/submit-selector";
 import { addTotalAmount } from "@/features/budget-slice";
 
 function TotalAmount({position}:{position:string}) {
-
     const isTheFirstSubmite= useSelector(isTheFirstSubmited);
     const dispatch=useDispatch()
 
